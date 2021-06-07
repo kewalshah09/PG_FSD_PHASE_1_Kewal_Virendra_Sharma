@@ -9,6 +9,9 @@ public class TestN {
 	public void methodPublic()
 	{  
 		System.out.println("Class N: methodPublic");
+		methodProtected();
+		methodDefault();
+		methodPrivate();
 	}
 	
 	protected void methodProtected()

@@ -23,6 +23,14 @@ public class TestP extends TestM {
 		System.out.println("Class P: methodPrivate");
 	}
 	
+	public void methodP()
+	{
+		methodPublic();
+		methodProtected();
+		methodDefault();
+		methodPrivate();		
+	}
+	
 	
 	public static void main(String args[])
 	{

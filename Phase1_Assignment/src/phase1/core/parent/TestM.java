@@ -1,6 +1,6 @@
 package phase1.core.parent;
 
-public class TestM {
+public class TestM extends TestN {
 	
 	private int mi = 10;
 	long ml = 12121212;
@@ -9,6 +9,9 @@ public class TestM {
 	public void methodPublic()
 	{  
 		System.out.println("Class M: methodPublic");
+		methodProtected();
+		methodDefault();
+		methodPrivate();
 	}
 	
 	protected void methodProtected()
