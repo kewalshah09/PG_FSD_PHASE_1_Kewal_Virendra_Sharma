@@ -39,7 +39,6 @@ class Hello extends Infosys {
 	{	
 		System.out.println("Abstract_2 in Hello");
 	}
-	
 }
 
 public class Abstract {
