@@ -50,7 +50,10 @@ public class Abstract {
 		info.abstract_2();
 		
 		Hello hello = new Hello();
-		hello.infoNorm();	
+		hello.infoNorm();
+		
+		MNC mnc = new Hello();
+		mnc.generalMethod();
 	}
 
 }
