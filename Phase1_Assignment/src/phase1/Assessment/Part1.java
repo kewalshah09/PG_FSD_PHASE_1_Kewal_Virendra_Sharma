@@ -1,8 +1,14 @@
 package phase1.Assessment;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.TreeSet;
+
+import javax.print.attribute.HashAttributeSet;
 
 public class Part1 {
 	
@@ -10,11 +16,12 @@ public class Part1 {
 	{
 		Scanner scan = new Scanner(System.in);
 		int choice;
-		int sub;
+		int sub,read;
 		String newfile,deletefile;
 		String[] dirfile;
 		File dir = new File("C://JS");
 		File dir1 = new File("C://JS//");
+		char[] ch = null;
 		
 		System.out.println("*********** Phase-1 Assessment ***********");
 		System.out.println("*********** File Handling Project ********");
@@ -32,9 +39,11 @@ public class Part1 {
 		 {    
          case 1:
         	 	
-        	 	System.out.println("*** Below are the files/Folders ***"); 
+        	 	System.out.println("*** Below are the files/Folders ***");
+        	 	TreeSet<String> test = new TreeSet<String>();
         	 	dirfile = dir.list();
-        	 	for(String value:dirfile)
+        	 	Collections.addAll(test, dirfile);
+        	 	for(String value:test)
         	 	{
         	 		System.out.println(value);
         	 	}
@@ -81,20 +90,20 @@ public class Part1 {
          			scan.nextLine();
          			String searchfile = scan.nextLine();
          			dirfile = dir.list();
+         			
             	 	for(String value:dirfile)
             	 	{
-            	 		if(searchfile == value) 
-            	 			System.out.println("File found, below are the details:");
-
-            	 		else
-            	 			System.out.println("File not found");
+            	 		if(value.equals(searchfile))
+            	 		{
+            	 			System.out.println("File found !!!");
+            	 		}
             	 	}
          		}
          		
          		break;
          		
          case (int) 3: 
-        	 	System.out.println("This is 3"); 
+        	 	System.exit(0); 
          		break;
          		
          default : 
