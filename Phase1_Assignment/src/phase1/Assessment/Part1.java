@@ -20,7 +20,7 @@ public class Part1 {
 		String newfile,deletefile;
 		String[] dirfile;
 		File dir = new File("C://JS");
-		File dir1 = new File("C://JS//");
+		File[] files = dir.listFiles();
 		char[] ch = null;
 		
 		System.out.println("*********** Phase-1 Assessment ***********");
@@ -39,10 +39,28 @@ public class Part1 {
 		 {    
          case 1:
         	 	
-        	 	System.out.println("*** Below are the files/Folders ***");
+        	 	System.out.println("*** Below are the files ***");
         	 	TreeSet<String> test = new TreeSet<String>();
+        	 	String[] filename = new String[10];
         	 	dirfile = dir.list();
-        	 	Collections.addAll(test, dirfile);
+        	 	int j=0;
+        	 	for(int i = 0 ; i < files.length ; i++)
+        	 	{
+        	 		if(files[i].isFile())
+        	 		{
+        	 			filename[j] = files[i].toString();
+        	 			j++;
+        	 		}
+        	 	}
+        	 	
+        	 	for(int i = 0 ; i < filename.length ; i++)
+        	 	{
+        	 		if(filename[i] != null)
+        	 		test.add(filename[i].toString());
+        	 	}
+        	 	
+        	 	
+//        	 	Collections.addAll(test, dirfile);
         	 	for(String value:test)
         	 	{
         	 		System.out.println(value);
