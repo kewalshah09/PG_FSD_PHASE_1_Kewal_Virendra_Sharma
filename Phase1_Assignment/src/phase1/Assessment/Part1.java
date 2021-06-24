@@ -1,6 +1,7 @@
 package phase1.Assessment;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Collections;
@@ -8,11 +9,10 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-import javax.print.attribute.HashAttributeSet;
 
 public class Part1 {
 	
-	public static void main(String args[]) throws IOException
+	public static void main(String args[]) throws IOException,FileNotFoundException
 	{
 		Scanner scan = new Scanner(System.in);
 		int choice;
@@ -113,7 +113,8 @@ public class Part1 {
             	 	{
             	 		if(value.equals(searchfile))
             	 		{
-            	 			System.out.println("File found !!!");
+            	 			throw new FileNotFoundException("not valid");
+//            	 			System.out.println("File found !!!");
             	 		}
             	 	}
          		}
@@ -127,6 +128,12 @@ public class Part1 {
          default : 
         	 	System.out.println("This is default");
 		 }
+		 
+		class FileNotFoundException extends Exception{
+			FileNotFoundException(String s){
+				  super(s);  
+				 }  
+			} 
 		
 	}
 
