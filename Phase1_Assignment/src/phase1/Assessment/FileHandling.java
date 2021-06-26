@@ -67,6 +67,7 @@ public class FileHandling {
 			}
 			case 3:
 			{
+				System.out.println("Exiting System ... Thank You !!!");
 				Runtime.getRuntime().exit(0);
 				break;
 			}
@@ -88,7 +89,7 @@ public class FileHandling {
 		
 		  File directoryPath = new File("C://JS//");
 		  File[] files = directoryPath.listFiles();
-	      System.out.println("List of files :");
+	      System.out.println("List of files :\n");
 	      for(int i=0; i<files.length; i++) 
 	      {
 	    	  if(files[i].isFile())
